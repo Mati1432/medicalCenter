@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_xj9b&rcd@lzj=8png@sl#)i&8pc#ba^h*9jiwp3hwq7t&a!^j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -36,8 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'accounts.apps.AccountsConfig',
+    'django.contrib.sites',
+    'accounts.apps.AccountConfig',
+    'allauth',
+    'allauth.socialaccount',
+    'allauth.account',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +71,10 @@ TEMPLATES = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 WSGI_APPLICATION = 'project.wsgi.application'
 
 # Database
@@ -122,6 +129,20 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+SITE_ID = 1
+AUTH_USER_MODEL = 'accounts.CustomUser'
+ACCOUNT_FORMS = {
+    'signup': 'accounts.forms.SignUpForm',
+}
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_VERIFICATION = True
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+ACCOUNT_USER_MODEL_USERNAME_FIELD = 'username'
+ACCOUNT_USERNAME_REQUIRED = False
 
 try:
     from project.settings_local import *  # noqa: F401,F403
