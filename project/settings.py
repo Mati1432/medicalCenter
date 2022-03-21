@@ -131,9 +131,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SITE_ID = 1
 AUTH_USER_MODEL = 'accounts.CustomUser'
-ACCOUNT_FORMS = {
-    'signup': 'accounts.forms.SignUpForm',
-}
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_EMAIL_REQUIRED = True
