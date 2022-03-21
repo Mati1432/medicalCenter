@@ -4,7 +4,6 @@ from django.utils.translation import gettext_lazy as _
 
 # 3rd-party
 from accounts.consts import specialization
-from accounts.models import CustomUser, Doctor, Patient
 from allauth.account.forms import SignupForm
 
 

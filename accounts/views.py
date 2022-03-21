@@ -25,10 +25,9 @@ class DoctorSignUp(SignupView):
     template_name = 'signup_doctor.html'
     form_class = DoctorSignUpForm
     redirect_field_name = 'next'
-    view_name = 'candidate_sign_up'
+    view_name = 'doctor_sign_up'
 
     def get_context_data(self, **kwargs):
         ret = super(DoctorSignUp, self).get_context_data(**kwargs)
-        print(ret)
         ret.update(self.kwargs)
         return ret
