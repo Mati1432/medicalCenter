@@ -15,7 +15,7 @@ class PatientSignUp(SignupView):  # noqa D101
     view_name = 'patient_sign_up'
 
     def get_context_data(self, **kwargs):  # noqa D102
-        ret = super(PatientSignUp, self).get_context_data(**kwargs)
+        ret = super().get_context_data(**kwargs)
         ret.update(self.kwargs)
         return ret
 
@@ -27,6 +27,6 @@ class DoctorSignUp(SignupView):  # noqa D101
     view_name = 'doctor_sign_up'
 
     def get_context_data(self, **kwargs):  # noqa D102
-        ret = super(DoctorSignUp, self).get_context_data(**kwargs)
+        ret = super().get_context_data(**kwargs)
         ret.update(self.kwargs)
         return ret
