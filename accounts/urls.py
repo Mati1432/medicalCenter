@@ -1,9 +1,9 @@
 """Urls files."""
 # Django
-from django.template.defaulttags import url
 from django.urls import include
 from django.urls import path
 
+# Project
 from accounts import views
 
 urlpatterns = [

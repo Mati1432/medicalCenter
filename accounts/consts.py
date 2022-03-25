@@ -1,7 +1,8 @@
 """Consts.py files."""
+# Django
 from django.utils.translation import gettext_lazy as _
 
-specialization = (
+SPECIALIZATION = (
     ('Allergy and immunology', _('Allergy and immunology')),
     ('Anesthesiology', _('Anesthesiology')),
     ('Dermatology', _('Dermatology')),

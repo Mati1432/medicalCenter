@@ -88,7 +88,7 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': '',
         'PORT': '',
-    }
+    },
 }
 
 # Password validation
