@@ -1,10 +1,13 @@
+"""Models files."""
+# Django
 from django.db import models
-
-from accounts.models import CustomUser
 from django.utils.translation import gettext_lazy as _
 
+# Project
+from accounts.models import CustomUser
 
-class Visit(models.Model):
+
+class Visit(models.Model):  # noqa D101
     doctor = models.CharField(max_length=245)
     specialization = models.CharField(max_length=245)
     date_visit = models.DateTimeField()

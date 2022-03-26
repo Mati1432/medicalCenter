@@ -1,6 +1,6 @@
 """Urls files."""
 # Django
-from django.urls import include, re_path
+from django.urls import include
 from django.urls import path
 
 # Project
