@@ -12,3 +12,4 @@ class VisitForm(forms.ModelForm):  # noqa D101
             'date_visit',
             'visit',
         ]
+
